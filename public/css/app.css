@@ -13,10 +13,12 @@ body {
   text-align: center; 
 }
 .topics li a {
-  border: 1px #222 solid;
+  color: #222;
+  border: 1px #f12000 solid;
   display: block;
   padding: 10px;
 }
 .topics li a:hover {
-  border: 1px #c0c0c0 solid;
+  border: 1px #888 solid;
+  color: #888;
 }
