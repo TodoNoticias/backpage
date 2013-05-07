@@ -1,0 +1,22 @@
+body {
+  padding: 2.0em;
+}
+.sidebar h1 {
+  margin-top: 0.5em;
+  margin-bottom: 0;
+  font-size: 1.5em;
+  font-weight: normal;
+  text-align: center;
+  text-transform: uppercase;
+}
+.topics li {
+  text-align: center; 
+}
+.topics li a {
+  border: 1px #222 solid;
+  display: block;
+  padding: 10px;
+}
+.topics li a:hover {
+  border: 1px #c0c0c0 solid;
+}
