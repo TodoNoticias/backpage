@@ -5,4 +5,3 @@
 *.rbc
 /pkg
 /doc/api
-/Gemfile.lock
