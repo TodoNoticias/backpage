@@ -33,7 +33,7 @@ get '/' do
 end
 
 def getFeed(time_to_live = settings.long_ttl)
-  if(!settings.enable_cache || )
+  if(!settings.enable_cache)
     return Feedzirra::Feed.fetch_and_parse("http://fastcolabs.com/rss.xml")
   end
   if(settings.cache.get('feed') == nil)
