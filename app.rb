@@ -3,7 +3,9 @@ require 'feedzirra'
 require 'sinatra'
 require 'dalli'
 
-set :cache, Dalli::Client.new
+set :cache, Dalli::Client.new(ENV['MEMCACHE_SERVERS'], 
+    :username => ENV['MEMCACHE_USERNAME'], 
+    :password => ENV['MEMCACHE_PASSWORD'])
 set :enable_cache, true
 set :short_ttl, 400
 set :long_ttl, 1800
@@ -31,7 +33,7 @@ get '/' do
 end
 
 def getFeed(time_to_live = settings.long_ttl)
-  if(!settings.enable_cache)
+  if(!settings.enable_cache || )
     return Feedzirra::Feed.fetch_and_parse("http://fastcolabs.com/rss.xml")
   end
   if(settings.cache.get('feed') == nil)
