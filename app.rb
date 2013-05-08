@@ -2,10 +2,9 @@ require 'rubygems'
 require 'feedzirra'
 require 'sinatra'
 require 'dalli'
+require 'memcachier'
 
-set :cache, Dalli::Client.new(ENV['MEMCACHE_SERVERS'], 
-    :username => ENV['MEMCACHE_USERNAME'], 
-    :password => ENV['MEMCACHE_PASSWORD'])
+set :cache, Dalli::Client.new
 set :enable_cache, true
 set :short_ttl, 400
 set :long_ttl, 1800
