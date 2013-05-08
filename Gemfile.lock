@@ -20,6 +20,7 @@ GEM
     json (1.7.7)
     loofah (1.2.1)
       nokogiri (>= 1.4.4)
+    memcachier (0.0.2)
     multi_json (1.7.3)
     nokogiri (1.5.9)
     rack (1.5.2)
@@ -44,5 +45,6 @@ PLATFORMS
 DEPENDENCIES
   dalli
   feedzirra
+  memcachier
   rack-cache
   sinatra
