@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'feedzirra'
 require 'sinatra'
-require 'Dalli'
+require 'dalli'
 
 set :cache, Dalli::Client.new
 set :enable_cache, true
