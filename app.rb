@@ -14,7 +14,7 @@ get '/' do
   cats = []
   topics = []
   feed = getFeed()
-  if(feed.entries)
+  if(feed)
     items = feed.entries.first(20)
     items.each do |i|
       i.categories.each do |c|
@@ -29,6 +29,8 @@ get '/' do
         end
       end
     end
+  else
+    topics.push({ :cat => 'Feed down. Check back momentarily.', :url => 'http://fastcolabs.com', :title => 'Feed down'})
   end
   erb :index, :locals => {:topics => topics}
 end
