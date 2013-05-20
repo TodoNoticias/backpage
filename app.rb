@@ -10,21 +10,23 @@ set :short_ttl, 400
 set :long_ttl, 1800
 
 get '/' do
-  feed = getFeed()
-  items = feed.entries.first(20)
   supertags = ["Target", "Open Company", "Accelerator", "Tracking", "Future Of Retail", "Technology"]
   cats = []
   topics = []
-  items.each do |i|
-    i.categories.each do |c|
-      if supertags.include? c
-        break
-      end
-      if !cats.include? c
-        topic = { :cat => c, :url => i.url, :title => i.title }
-        topics.push(topic)
-        cats.push(c)
-        # break
+  feed = getFeed()
+  if(feed.entries)
+    items = feed.entries.first(20)
+    items.each do |i|
+      i.categories.each do |c|
+        if supertags.include? c
+          break
+        end
+        if !cats.include? c
+          topic = { :cat => c, :url => i.url, :title => i.title }
+          topics.push(topic)
+          cats.push(c)
+          # break
+        end
       end
     end
   end
